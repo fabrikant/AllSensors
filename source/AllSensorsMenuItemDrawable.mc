@@ -29,7 +29,7 @@ class MenuItemDrawable extends WatchUi.Drawable {
 		clear(dc, app.itemBackgroundColor );
 		dc.setColor(app.valueColor, Graphics.COLOR_TRANSPARENT);
 		drawTitle(dc, app);
-		drawValue(dc, app);
+		self.drawValue(dc, app);
     }
     
     function drawTitle(dc, app){
