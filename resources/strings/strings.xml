@@ -1,3 +1,37 @@
 <strings>
     <string id="AppName">AllSensors</string>
+
+	<!--Pressure -->
+	<string id="PrU" scope="foreground">Pressure Unit</string>
+	
+	<!--PRESSURE UNITS -->
+	<string id="PrUMmHg" scope="foreground">mmHg</string>
+	<string id="PrUPsi" scope="foreground">Psi</string>
+	<string id="PrUInchHg" scope="foreground">inchHg</string>
+	<string id="PrUBar" scope="foreground">Bar</string>
+	<string id="PrUKPa" scope="foreground">kPa</string>
+	<string id="PrUhPa" scope="foreground">hPa</string>
+
+	<!--Speed -->
+	<string id="SpU" scope="foreground">Speed Unit</string>
+	
+	<!--SPEED UNITS -->
+	<string id="SpeedUnitMSec" scope="foreground">m/s</string>
+	<string id="SpeedUnitKmH" scope="foreground">km/h</string>
+	<string id="SpeedUnitMileH" scope="foreground">miles/h</string>
+	<string id="SpeedUnitFtSec" scope="foreground">feet/s</string>
+
+	<string id="menuTitle" scope="foreground">Sensors\nvalues</string>
+	<string id="NotAvailable" scope="foreground">Not available</string>
+	<string id="prTitle" scope="foreground">pressure</string>
+	<string id="headTitle" scope="foreground">compass</string>
+	<string id="altTitle" scope="foreground">altitude</string>
+	<string id="tTitle" scope="foreground">temperature</string>
+	<string id="hrTitle" scope="foreground">heart rate</string>
+	<string id="spTitle" scope="foreground">speed</string>
+	<string id="cadTitle" scope="foreground">cadence</string>
+	<string id="powTitle" scope="foreground">power</string>
+	<string id="accelTitle" scope="foreground">accelerometer</string>
+	<string id="magTitle" scope="foreground">magnetometer</string>
+	
 </strings>

@@ -1,0 +1,79 @@
+<settings>
+
+
+	<!--UNIT PRESSURE -->
+	<setting propertyKey="@Properties.PrU"
+		title="@Strings.PrU">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.PrUMmHg</listEntry>
+			<listEntry value="1">@Strings.PrUPsi</listEntry>
+			<listEntry value="2">@Strings.PrUInchHg</listEntry>
+			<listEntry value="3">@Strings.PrUBar</listEntry>
+			<listEntry value="4">@Strings.PrUKPa</listEntry>
+			<listEntry value="5">@Strings.PrUhPa</listEntry>
+		</settingConfig>
+	</setting>
+	
+	<!--UNIT SPEED -->
+	<setting propertyKey="@Properties.SpU"
+		title="@Strings.SpU">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.SpeedUnitMSec</listEntry>
+			<listEntry value="1">@Strings.SpeedUnitKmH</listEntry>
+			<listEntry value="2">@Strings.SpeedUnitMileH</listEntry>
+			<listEntry value="3">@Strings.SpeedUnitFtSec</listEntry>
+		</settingConfig>
+	</setting>
+
+	<setting propertyKey="@Properties.pressure"
+		title="@Strings.prTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.heading"
+		title="@Strings.headTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.altitude"
+		title="@Strings.altTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.temperature"
+		title="@Strings.tTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.heartRate"
+		title="@Strings.hrTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.speed"
+		title="@Strings.spTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.cadence"
+		title="@Strings.cadTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.power"
+		title="@Strings.powTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.accel"
+		title="@Strings.accelTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+	<setting propertyKey="@Properties.mag"
+		title="@Strings.magTitle">
+		<settingConfig type="boolean" />
+	</setting>
+
+
+</settings>

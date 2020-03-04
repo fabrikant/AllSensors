@@ -7,6 +7,6 @@ class AllSensorsMenuDelegate extends WatchUi.Menu2InputDelegate {
     }
 
     function onSelect(item) {
-        System.println(item.getId());
+        //System.println(item.getId());
     }
 }

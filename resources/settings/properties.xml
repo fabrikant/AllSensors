@@ -1,0 +1,17 @@
+<properties>
+	<!--PRESSURE -->
+	<property id="PrU" type="number">0</property>
+	<property id="SpU" type="number">0</property>
+	
+	<property id="pressure" type="boolean">true</property>
+	<property id="heading" type="boolean">true</property>
+	<property id="altitude" type="boolean">true</property>
+	<property id="temperature" type="boolean">true</property>
+	<property id="heartRate" type="boolean">true</property>
+	<property id="speed" type="boolean">false</property>
+	<property id="cadence" type="boolean">false</property>
+	<property id="power" type="boolean">false</property>
+	<property id="accel" type="boolean">false</property>
+	<property id="mag" type="boolean">false</property>
+
+</properties>

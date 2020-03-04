@@ -5,56 +5,57 @@ using Toybox.Application;
 
 class MenuItemDrawable extends WatchUi.Drawable {
     
-    var sensorType;
+    var sensorType, convertMethod, title;
 
-    function initialize(id, height) {
+    function initialize(options) {
     	
-    	sensorType = id;
+    	sensorType = options[:id];
+    	convertMethod = options[:method];
+    	title = options[:title];  
 		var params = {
-			:identifier => id,
+			:identifier => options[:id],
 			:locX =>0,
 			:locY => 0,
 			:width => System.getDeviceSettings().screenWidth,
-			:height => height
+			:height => options[:height]
 			
 		};
         Drawable.initialize(params);
     }
 
     function draw(dc) {
-    	var sensorsInfo = Application.getApp().sensorInfo;
-		var color = Graphics.COLOR_WHITE;
-		var backgroundColor = Graphics.COLOR_BLACK;
-				
-		clear(dc, backgroundColor);
-		dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-//		dc.drawText(0, 0, Graphics.FONT_SYSTEM_SMALL, "asd", Graphics.TEXT_JUSTIFY_LEFT);
-		
-//		System.println(sensorsInfo);
-//		System.println(sensorsInfo.temperature);
-//		System.println(sensorsInfo[:temperature]);
-//		System.println(sensorsInfo[sensorType]);
-		
-		//dc.drawText(0, 0, Graphics.FONT_SYSTEM_MEDIUM, "aaa");
-		var text = "";
-		if (sensorsInfo == null){
-			text = "sensors \nN/A";						
-		} else {
-			var text = "N/A";
-			if (sensorsInfo has sensorType){
-				if (sensorsInfo[sensorType] != null){
-					//System.println(sensorsInfo.get(identifier));
-					text = sensorsInfo[sensorType];				
-				}
+    	var app = Application.getApp();
+    	
+		clear(dc, app.itemBackgroundColor );
+		dc.setColor(app.valueColor, Graphics.COLOR_TRANSPARENT);
+		drawTitle(dc, app);
+		drawValue(dc, app);
+    }
+    
+    function drawTitle(dc, app){
+    	dc.drawText(width/2, 0, app.titleFont, title ,Graphics.TEXT_JUSTIFY_CENTER);
+    }
+    
+    function drawValue(dc, app){
+    	
+    	var sensorsInfo = app.sensorInfo;
+    	var text = "";
+    	var y = Graphics.getFontHeight(app.titleFont);
+    	var rawData = sensorsInfo[sensorType];
+    	var font = app.valueFont;
+    	
+    	if (rawData != null){
+			if(convertMethod != null){
+				text = convertMethod.invoke(rawData);
+			} else {
+				text = rawData.toString();
 			}
-		}    	
-		System.println(text);
-		dc.drawText(0, 0, Graphics.FONT_SYSTEM_MEDIUM, sensorsInfo[sensorType] ,Graphics.TEXT_JUSTIFY_LEFT);
-		
-		
-		    	
-//    	//System.println(identifier);
-//        //myShapes.draw(dc);
+		}else{
+			text = Application.loadResource(Rez.Strings.NotAvailable);
+			font = Graphics.FONT_LARGE;		    		
+    	}
+    	dc.drawText(width/2, y, font, text ,Graphics.TEXT_JUSTIFY_CENTER);
+    	
     }
     
     function clear(dc, backgroundColor){
