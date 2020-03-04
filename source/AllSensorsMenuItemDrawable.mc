@@ -4,46 +4,45 @@ using Toybox.System;
 using Toybox.Application;
 
 class MenuItemDrawable extends WatchUi.Drawable {
-    
+
     var sensorType, convertMethod, title;
 
     function initialize(options) {
-    	
+
     	sensorType = options[:id];
     	convertMethod = options[:method];
-    	title = options[:title];  
+    	title = options[:title];
 		var params = {
 			:identifier => options[:id],
 			:locX =>0,
 			:locY => 0,
 			:width => System.getDeviceSettings().screenWidth,
 			:height => options[:height]
-			
+
 		};
         Drawable.initialize(params);
     }
 
     function draw(dc) {
     	var app = Application.getApp();
-    	
+
 		clear(dc, app.itemBackgroundColor );
 		dc.setColor(app.valueColor, Graphics.COLOR_TRANSPARENT);
 		drawTitle(dc, app);
-		self.drawValue(dc, app);
+		drawValue(dc, app);
     }
-    
+
     function drawTitle(dc, app){
     	dc.drawText(width/2, 0, app.titleFont, title ,Graphics.TEXT_JUSTIFY_CENTER);
     }
-    
+
     function drawValue(dc, app){
-    	
-    	var sensorsInfo = app.sensorInfo;
+
     	var text = "";
+    	var rawData = getRawData(app);
     	var y = Graphics.getFontHeight(app.titleFont);
-    	var rawData = sensorsInfo[sensorType];
     	var font = app.valueFont;
-    	
+
     	if (rawData != null){
 			if(convertMethod != null){
 				text = convertMethod.invoke(rawData);
@@ -52,12 +51,21 @@ class MenuItemDrawable extends WatchUi.Drawable {
 			}
 		}else{
 			text = Application.loadResource(Rez.Strings.NotAvailable);
-			font = Graphics.FONT_LARGE;		    		
+			font = Graphics.FONT_LARGE;
     	}
     	dc.drawText(width/2, y, font, text ,Graphics.TEXT_JUSTIFY_CENTER);
-    	
+
     }
-    
+
+	function getRawData(app){
+		var sensorsInfo = app.sensorInfo;
+		var rawData = null;
+	   	if (sensorsInfo instanceof Toybox.Sensor.Info){
+   			rawData = sensorsInfo[sensorType];
+    	}
+    	return rawData;
+	}
+
     function clear(dc, backgroundColor){
         dc.setColor(
             backgroundColor,

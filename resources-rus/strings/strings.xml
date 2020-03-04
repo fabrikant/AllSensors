@@ -1,0 +1,39 @@
+<strings>
+    <string id="AppName">AllSensors</string>
+
+	<!--Pressure -->
+	<string id="PrU" scope="foreground">Единицы давления</string>
+	
+	<!--PRESSURE UNITS -->
+	<string id="PrUMmHg" scope="foreground">мм Рт. столба</string>
+	<string id="PrUPsi" scope="foreground">фунт/дюйм2</string>
+	<string id="PrUInchHg" scope="foreground">дюймы ртутного столба</string>
+	<string id="PrUBar" scope="foreground">бар</string>
+	<string id="PrUKPa" scope="foreground">кило Па</string>
+	<string id="PrUhPa" scope="foreground">гекто Па</string>
+
+	<!--Speed -->
+	<string id="SpU" scope="foreground">Единицы скорости</string>
+	
+	<!--SPEED UNITS -->
+
+	<string id="SpeedUnitMSec" scope="foreground">м/сек</string>
+	<string id="SpeedUnitKmH" scope="foreground">км/ч</string>
+	<string id="SpeedUnitMileH" scope="foreground">миль/ч</string>
+	<string id="SpeedUnitFtSec" scope="foreground">футов/сек</string>
+ 
+	<string id="menuTitle" scope="foreground">Сенсоры</string>
+	<string id="NotAvailable" scope="foreground">Недоступно</string>
+	<string id="prTitle" scope="foreground">давление</string>
+	<string id="headTitle" scope="foreground">компас</string>
+	<string id="altTitle" scope="foreground">высота</string>
+	<string id="tTitle" scope="foreground">температура</string>
+	<string id="hrTitle" scope="foreground">пульс</string>
+	<string id="spTitle" scope="foreground">скорость</string>
+	<string id="cadTitle" scope="foreground">каденс</string>
+	<string id="powTitle" scope="foreground">мощность</string>
+	<string id="accelTitle" scope="foreground">акселерометр</string>
+	<string id="magTitle" scope="foreground">магнетометр</string>
+
+ 	
+</strings>
