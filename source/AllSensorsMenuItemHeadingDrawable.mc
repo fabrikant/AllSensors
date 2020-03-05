@@ -22,6 +22,8 @@ class MenuItemHeadingDrawable extends MenuItemDrawable {
     		return;
     	}
 
+		angleRad = -angleRad;
+
     	//var dirHeight = 0.4*height;
     	var dirHeight = 0.4 * Graphics.getFontHeight(app.valueFont);
     	var dirWidth = dirHeight/3;
