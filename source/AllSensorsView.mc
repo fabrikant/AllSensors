@@ -15,6 +15,7 @@ class AllSensorsView extends WatchUi.View {
 
     // Load your resources here
     function onLayout(dc) {
+    	setLayout(Rez.Layouts.MainLayout(dc));
 		createMenu();
 		var delegate = new AllSensorsMenuDelegate();
 		WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);

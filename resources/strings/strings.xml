@@ -34,4 +34,6 @@
 	<string id="accelTitle" scope="foreground">accelerometer</string>
 	<string id="magTitle" scope="foreground">magnetometer</string>
 	
+	<string id="Exit" scope="foreground">Press\nEXIT\nfor\nexit</string>
+	
 </strings>

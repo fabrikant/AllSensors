@@ -35,5 +35,7 @@
 	<string id="accelTitle" scope="foreground">акселерометр</string>
 	<string id="magTitle" scope="foreground">магнетометр</string>
 
+	
+	<string id="Exit" scope="foreground">Нажмите\nВЫХОД\nдля\nвыхода</string>
  	
 </strings>

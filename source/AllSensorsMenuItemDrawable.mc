@@ -61,7 +61,9 @@ class MenuItemDrawable extends WatchUi.Drawable {
 		var sensorsInfo = app.sensorInfo;
 		var rawData = null;
 	   	if (sensorsInfo instanceof Toybox.Sensor.Info){
-   			rawData = sensorsInfo[sensorType];
+	   		if (sensorsInfo has sensorType){
+   				rawData = sensorsInfo[sensorType];
+   			}
     	}
     	return rawData;
 	}
