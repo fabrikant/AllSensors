@@ -42,6 +42,7 @@ class AllSensorsView extends WatchUi.View {
 			options = {
 				:id => :pressure,
 				:method => new Lang.Method(Tools, :pressure),
+				:methodHistory => :getPressureHistory,
 				:title => Application.loadResource(Rez.Strings.prTitle),
 				:height => itemHeight
 			};
@@ -68,6 +69,7 @@ class AllSensorsView extends WatchUi.View {
 			options = {
 				:id => :altitude ,
 				:method => new Lang.Method(Tools, :elevation),
+				:methodHistory => :getElevationHistory,
 				:title => Application.loadResource(Rez.Strings.altTitle),
 				:height => itemHeight
 			};
@@ -81,6 +83,7 @@ class AllSensorsView extends WatchUi.View {
 			options = {
 				:id => :temperature,
 				:method => new Lang.Method(Tools, :temperature),
+				:methodHistory => :getTemperatureHistory,
 				:title => Application.loadResource(Rez.Strings.tTitle),
 				:height => itemHeight
 			};

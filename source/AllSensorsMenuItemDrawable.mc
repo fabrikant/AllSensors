@@ -5,12 +5,14 @@ using Toybox.Application;
 
 class MenuItemDrawable extends WatchUi.Drawable {
 
-    var sensorType, convertMethod, title;
+    var sensorType, convertMethod, title, methodHistory;
 
     function initialize(options) {
 
     	sensorType = options[:id];
     	convertMethod = options[:method];
+    	methodHistory = options[:methodHistory];
+
     	title = options[:title];
 		var params = {
 			:identifier => options[:id],
@@ -40,6 +42,10 @@ class MenuItemDrawable extends WatchUi.Drawable {
 
     	var text = "";
     	var rawData = getRawData(app);
+    	if (rawData == null && methodHistory != null){//try get sensor history
+			rawData = getSensorHistoryLastValue(:getTemperatureHistory);
+		}
+
     	var y = Graphics.getFontHeight(app.titleFont);
     	var font = app.valueFont;
 
@@ -66,6 +72,18 @@ class MenuItemDrawable extends WatchUi.Drawable {
    			}
     	}
     	return rawData;
+	}
+
+	function getSensorHistoryLastValue(methodSym){
+		var result = null;
+		if (Toybox has :SensorHistory){
+			if( Toybox.SensorHistory has methodSym){
+				var met = new Lang.Method(Toybox.SensorHistory, methodSym);
+				var iter = met.invoke({:period => 1, :order => SensorHistory.ORDER_NEWEST_FIRST});
+				result = iter.getMin();
+			}
+		}
+		return result;
 	}
 
     function clear(dc, backgroundColor){

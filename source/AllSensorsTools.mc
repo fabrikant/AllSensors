@@ -1,9 +1,11 @@
 using Toybox.Application;
 using Toybox.System;
 using Toybox.Math;
+using Toybox.SensorHistory;
+using Toybox.Lang;
 
 module Tools {
- 
+
  	function pressure(rawData){
 		var value = rawData; /*Pa */
 		var unit  = Application.getApp().settings[:pressureUnit];
@@ -32,7 +34,7 @@ module Tools {
 		}
 		return value.format("%d")+"°";
 	}
-	
+
 	function heading(rawData){
 		var value = Math.round( Math.toDegrees(rawData));
 		if (value < 0){
@@ -40,7 +42,7 @@ module Tools {
 		}
 		return value.format("%d");
 	}
-	
+
 	function elevation(rawData){
 		var value = rawData;//meters
 		var unit =  System.getDeviceSettings().elevationUnits;
@@ -49,11 +51,11 @@ module Tools {
 		}
 		return value.format("%d");
 	}
-	
+
 	function speed(rawData){
 		var value = rawData;//meters/sec
 		//var unit =  Application.Properties.getValue("WU");
-		var unit = Application.getApp().settings[:speedUnit];  
+		var unit = Application.getApp().settings[:speedUnit];
 		if (unit == 1){ /*km/h*/
 			value = rawData*3.6;
 		}else if (unit == 2){ /*mile/h*/
@@ -63,5 +65,6 @@ module Tools {
 		}
 		return value.format("%.2f");
 	}
-	
+
+
 }
